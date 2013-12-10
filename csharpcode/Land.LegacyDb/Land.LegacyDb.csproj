@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A27CD9EC-EB9F-4EFF-B9A4-737045159B95}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Land.LegacyDb</RootNamespace>
+    <AssemblyName>Land.LegacyDb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBVTables\AddressBook\VTable_Towns.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_PlanningTowns.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_Affiliates.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_Agents.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_ContactsFromOutlook.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_Contacts_Individuals.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_Contacts_Organisations.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_ContactsMain.cs" />
+    <Compile Include="DBVTables\Site\VTable_ContractDetails.cs" />
+    <Compile Include="DBVTables\LandSearch\VTable_DeveloperCountyRequirements.cs" />
+    <Compile Include="DBVTables\LandSearch\VTable_DeveloperRequirementsMain.cs" />
+    <Compile Include="DBVTables\Greensheet\VTable_Greensheet_AdditionalDetails.cs" />
+    <Compile Include="DBVTables\Greensheet\VTable_Greensheet_Data.cs" />
+    <Compile Include="DBVTables\Greensheet\VTable_Greensheet_Details.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_LandAgents.cs" />
+    <Compile Include="DBVTables\LandSearch\VTable_LocationDetails.cs" />
+    <Compile Include="DBVTables\Site\VTable_OfferDetails.cs" />
+    <Compile Include="DBVTables\AddressBook\VTable_Owners.cs" />
+    <Compile Include="DBVTables\Site\VTable_Site.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\land.Data\Land.Data.csproj">
+      <Project>{95e89c98-a290-46dc-a300-1b8a21a4f268}</Project>
+      <Name>Land.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lincore.DataTools\Lincore.DataTools.csproj">
+      <Project>{fbe5178f-8744-49b7-a4f0-48dc53c9f26a}</Project>
+      <Name>Lincore.DataTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
